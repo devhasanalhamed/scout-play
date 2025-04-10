@@ -23,16 +23,6 @@
 
     Club Access: Scouts view player profiles and contact them
 
-🚫 Features Not Included
-
-    No live match streaming
-
-    No full match uploads
-
-    No messaging or social media features
-
-    Football-only (no multi-sport support)
-
 ✅ Success Criteria
 
     Functional AI analysis and backend
