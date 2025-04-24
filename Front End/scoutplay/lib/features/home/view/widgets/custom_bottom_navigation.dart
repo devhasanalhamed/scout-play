@@ -13,7 +13,7 @@ class CustomBottomNavigation extends StatelessWidget {
         margin: EdgeInsets.only(left: 32.0, right: 32.0, bottom: 16.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16.0),
-          color: Colors.black54,
+          color: Colors.black87,
           border: Border.all(color: Colors.white, width: 1.0),
         ),
         clipBehavior: Clip.hardEdge,
@@ -32,8 +32,8 @@ class CustomBottomNavigation extends StatelessWidget {
               label: 'Play',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.subscriptions),
-              label: 'Packages',
+              icon: Icon(Icons.sports),
+              label: 'Challenge',
             ),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           ],

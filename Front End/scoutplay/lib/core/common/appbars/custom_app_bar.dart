@@ -7,7 +7,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color? foregroundColor;
   final ShapeBorder? shape;
   final bool automaticallyImplyLeading;
-  final double? toolbarHeight;
   const CustomAppBar({
     super.key,
     required this.title,
@@ -15,7 +14,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.backgroundColor,
     this.foregroundColor,
     this.shape,
-    this.toolbarHeight = 128,
     this.automaticallyImplyLeading = true,
   });
 
@@ -25,21 +23,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title, style: TextStyle(fontSize: 32)),
+      title: Text(title),
       centerTitle: centerTitle,
-      backgroundColor: backgroundColor ?? Theme.of(context).colorScheme.primary,
+      backgroundColor: backgroundColor ?? Colors.white10,
       foregroundColor: foregroundColor ?? Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(24),
-          bottomRight: Radius.circular(24),
-        ),
-      ),
-      toolbarHeight: toolbarHeight,
-      automaticallyImplyLeading: automaticallyImplyLeading,
+      actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(toolbarHeight ?? kToolbarHeight);
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }

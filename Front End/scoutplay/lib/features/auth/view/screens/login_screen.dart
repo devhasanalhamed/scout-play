@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:scoutplay/core/common/appbars/custom_app_bar.dart';
 import 'package:scoutplay/core/common/buttons/clickable_rich_text.dart';
 import 'package:scoutplay/core/common/buttons/custom_elevated_button.dart';
 import 'package:scoutplay/core/common/fields/custom_text_form_field.dart';
 import 'package:scoutplay/core/common/layouts/custom_padding.dart';
 import 'package:scoutplay/core/routes/app_routes.dart';
+import 'package:scoutplay/features/auth/view/widgets/auth_app_bar.dart';
 
 class LoginScreen extends StatelessWidget {
   static String routeName = '/login_screen';
@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          AppBar(title: Text('title', style: TextStyle(fontSize: 32))),
+          AuthAppBar(title: 'Welcome Back'),
           Expanded(
             child: CustomPadding.bottomLeftRight(
               left: 32,
@@ -43,7 +43,10 @@ class LoginScreen extends StatelessWidget {
                   CustomElevatedButton(
                     text: 'Login',
                     onPressed: () {
-                      AppRoutes.pushNamed(context, AppRoutes.homeScreen);
+                      AppRoutes.pushNamedAndRemoveUntil(
+                        context,
+                        AppRoutes.homeScreen,
+                      );
                     },
                   ),
                   Spacer(),

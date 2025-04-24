@@ -5,7 +5,7 @@ class CardClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     Path path = Path();
     const radius = 20.0;
-    const notchRadius = 30.0;
+    const notchRadius = 25.0;
     const notchWidth = 80.0;
     final center = size.width / 2;
 

@@ -18,12 +18,20 @@ class AppRoutes {
   };
 
   // Navigator
+  static void push(BuildContext context, Widget page) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => page));
+  }
+
   static void pushNamed(BuildContext context, String route) {
     Navigator.of(context).pushNamed(route);
   }
 
   static void pushReplacementNamed(BuildContext context, String route) {
     Navigator.of(context).pushReplacementNamed(route);
+  }
+
+  static void pushNamedAndRemoveUntil(BuildContext context, String route) {
+    Navigator.pushNamedAndRemoveUntil(context, route, (route) => false);
   }
 
   // Auth Screens
